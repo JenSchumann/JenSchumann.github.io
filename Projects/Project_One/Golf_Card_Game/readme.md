@@ -47,7 +47,7 @@ Game Logic:
 
 Programmatic Planning:
 
-1. computerDealer = using JQuery & a for loop, 9 random cards will be dealt to each user's playing field (see wireframe) w/either a start game or deal cards button. (like pokeASquare).  Cards a placed facedown (card image png facedown).
+1. computerDealer = using JQuery & a for loop, 9 random cards will be dealt to each user's playing field (see wireframe) w/either a start game or deal cards button. (like pokeASquare).  Cards are placed facedown (card image png facedown).
 
 2. let score = 0, let round = 0 set to global variables at beginning of program.
 
