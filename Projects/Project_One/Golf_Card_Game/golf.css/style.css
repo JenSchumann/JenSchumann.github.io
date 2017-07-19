@@ -1,3 +1,13 @@
 body {
   background-color: black;
 }
+
+body:after {
+    content:"";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 3px dotted #FF0000; /*change these values to suit your liking*/
+}
