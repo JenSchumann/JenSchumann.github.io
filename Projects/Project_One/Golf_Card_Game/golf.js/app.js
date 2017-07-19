@@ -14,6 +14,11 @@ let playerTwoScore = 0;
 // console.log(playerOneScore);
 // console.log(playerTwoScore);
 
+// const uiObject =
+
+
+  // $('<body>').append('header');
+  // $('<body>').append('body:after');
 
 
 
@@ -40,4 +45,6 @@ let playerTwoScore = 0;
 
 
 
-})
+
+
+});
