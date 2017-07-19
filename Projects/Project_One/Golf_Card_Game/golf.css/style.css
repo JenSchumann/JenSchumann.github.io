@@ -68,3 +68,29 @@ header {
     background-color: black;
     z-index: 50;
 }
+
+#playerOneBoard {
+    float: left;
+    height: 75%;
+    width: 38%;
+    margin: 0 auto;
+    display: block;
+    border: 2px solid green;
+    font-size: 50px;
+    text-align: center;
+    padding: 15px;
+    background-color: gray;
+}
+
+#playerTwoBoard {
+    float: right;
+    height: 40%;
+    width: 38%;
+    margin: 0 auto;
+    display: block;
+    border: 2px solid purple;
+    font-size: 50px;
+    text-align: center;
+    padding: 15px;
+    background-color: yellow;
+}

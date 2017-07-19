@@ -1,6 +1,6 @@
-console.log("let's play cards");
+// console.log("let's play cards");
 $(() => {
-console.log('how about playing golf?');
+// console.log('how about playing golf?');
 
 // ============================================================================>
 
@@ -10,43 +10,58 @@ let round = 0;
 let playerOneScore = 0;
 let playerTwoScore = 0;
 
-//deck of cards
-// CardClass[] cardObj = new CardClass[52];
-// ^^^^online reference to creating deck of cards not sure about yet.. proceeding w/class notes&examples for now
+//need to generate deck of cards where each has a number value appear (Golf game logic: number value is major playing factor)
 
-    class Cards {
-        constructor(path, image, value) {
-            this.Stringpath = "";
-            this.img = img;
-            this.value = value;
+const createCards = (NumberofCards) => {
+    for(let i = 0; i < NumberofCards; i++) {
+
+      //card is a div... really just a square that I'll change out to the card images later... getting game logic running first:
+      const card = $('#startGame').on('click', (e) => {
+        //next line of code retrieves the value of cards present in this game:
+        // construct code for number value click:
+        $("#shuffle").click(function() {
+            count = 0
+            cards = [];
+            for(n in numbers) {
+                    let num = numbers[n]
+                    let card = {
+                      number: num,
+                      order: Math.floor(Math.random() * 5200) + 1
+                    };
+                    cards.push(card);
+                }
+            })
+            cards = cards.sort(function(a,b) {
+                    return (a.order < b.order ? -1 : 1)
+                });
+
+                for(let i = 0;i < 4;i++) {
+                        count++;
+                        dispCard(i);
+                    }
+                });
+
+            const dispCard = (cardNum) => {
+                    let i = cardNum
+                    let count = cardNum + 1;
+                    let card = cards[i];
+            $("#cards").append(count + " - " + card.number + "<br/>");
         }
-};
 
-//how add all the cards as an array for this one suit?
-const wholeDeck = new Cards(img/c01.bmp + cardObj[0], 1);
-console.log(wholeDeck);
+        $("#draw").click(function() {
+            if(count < 52) {
+                dispCard(count);
+                count++;
+            }
+            return false;
+        })
 
+      $('.cards').append(card);
+      $('#playerOneBoard').append(card);
+      $('#playerTwoBoard').append(card);
 
-
-//for loop to deal 9 random cards to player 1 board & also player 2 board face down
-//when face down card is clicked it needs to appear as a random card from the deck
-
-//create for loop which deals 9 cards to each player on the page using jquery
-
-
-
-
-
-
-
-
-
-
-// const uiObject =
-
-
-  // $('<body>').append('header');
-  // $('<body>').append('body:after');
+    }
+}
 
 
 
@@ -54,24 +69,21 @@ console.log(wholeDeck);
 
 
 
+//event listeners
 
+$('#startGame').on('click', (e) => {
+  console.log('start game button is working');
+})
 
+$('#shuffle').on('click', (e) => {
+  console.log('shuffle button is working');
+})
 
+$('#draw').on('click', (e) => {
+  console.log('draw button is working');
+})
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+createCards();
 
 
 
