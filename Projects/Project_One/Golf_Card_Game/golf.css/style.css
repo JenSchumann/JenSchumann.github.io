@@ -35,7 +35,6 @@ BASE STYLE
 
 
 body {
-  background-color: black;
   position: relative;
   line-height: 1.7em;
   z-index: 0;
@@ -43,7 +42,7 @@ body {
 
 body:after {
     content:"";
-    position: absolute;
+    position: relative;
     z-index: -1;
     top: 0;
     bottom: 0;
@@ -63,23 +62,31 @@ header {
     color: red;
     padding-top: 25px;
     padding-bottom: 25px;
-    align-items: center;
     position: relative;
     background-color: black;
-    z-index: 50;
+    z-index: 5;
+}
+
+.cardContainer {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
 }
 
 #playerOneBoard {
     float: left;
-    height: 75%;
-    width: 38%;
+    height: 100%;
+    width: 45%;
     margin: 0 auto;
-    display: block;
+    display: relative;
     border: 2px solid green;
     font-size: 50px;
-    text-align: center;
-    padding: 15px;
     background-color: gray;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
 }
 
 #playerTwoBoard {
@@ -93,4 +100,16 @@ header {
     text-align: center;
     padding: 15px;
     background-color: yellow;
+}
+
+.cards {
+    height: 85px;
+    width: 65px;
+    border: 2px solid white;
+    background-color: pink;
+    flex: 0 1 auto;
+    align-self: auto;
+    padding: 15px;
+    z-index: 3;
+    position: absolute;
 }

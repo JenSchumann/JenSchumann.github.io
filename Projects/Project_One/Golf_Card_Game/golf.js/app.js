@@ -9,7 +9,7 @@ $(() => {
 let round = 0;
 let playerOneScore = 0;
 let playerTwoScore = 0;
-let cards = [0,1,2,3,4,5,6,7,8,9,10,10,10];
+let cards = [0,1,2,3,4,5,6,7,8,9,10,10,10,0,1,2,3,4,5,6,7,8,9,10,10,100,1,2,3,4,5,6,7,8,9,10,10,100,1,2,3,4,5,6,7,8,9,10,10,10];
 let count = 0;
 const $cardContainer = $('.cardContainer');
 
@@ -24,7 +24,8 @@ const createCards = (NumberofCards) => {
       // const cardValue = $('#dealCards').on('click', (e) => {
         //next line of code retrieves the value of cards present in this game
         // })
-      applyRandomNumber(cards);
+      applyRandomNumberOne(cards);
+      applyRandomNumberTwo(cards);
 
       $cardContainer.append('<body>');
       $('.cards').append($cardContainer);
@@ -38,14 +39,18 @@ const createCards = (NumberofCards) => {
 
 
 
-//apply random number?
-const applyRandomNumber = (cards) => {
+//apply random number
+const applyRandomNumberOne = (cards) => {
   const randNum = Math.floor(Math.random() * (12-0)) + 0
     cards[randNum];
     $('#playerOneBoard').append('<p>' + cards[randNum] + '</p>');
 }
 
-
+const applyRandomNumberTwo = (cards) => {
+  const randNum = Math.floor(Math.random() * (12-0)) + 0
+    cards[randNum];
+    $('#playerTwoBoard').append('<p>' + cards[randNum] + '</p>');
+}
 
 
 //playerOneBoard div to append cards to
