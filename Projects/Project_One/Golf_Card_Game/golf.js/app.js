@@ -9,70 +9,100 @@ $(() => {
 let round = 0;
 let playerOneScore = 0;
 let playerTwoScore = 0;
+let cards = [0,1,2,3,4,5,6,7,8,9,10,10,10];
+let count = 0;
+const $cardContainer = $('.cardContainer');
 
-//need to generate deck of cards where each has a number value appear (Golf game logic: number value is major playing factor)
+//need to generate deck of cards where each has a number value appear
 
 const createCards = (NumberofCards) => {
     for(let i = 0; i < NumberofCards; i++) {
+//not sure if next line should belong here:
 
-      //card is a div... really just a square that I'll change out to the card images later... getting game logic running first:
-      const card = $('#startGame').on('click', (e) => {
-        //next line of code retrieves the value of cards present in this game:
-        // construct code for number value click:
-        $("#shuffle").click(function() {
-            count = 0
-            cards = [];
-            for(n in numbers) {
-                    let num = numbers[n]
-                    let card = {
-                      number: num,
-                      order: Math.floor(Math.random() * 5200) + 1
-                    };
-                    cards.push(card);
-                }
-            })
-            cards = cards.sort(function(a,b) {
-                    return (a.order < b.order ? -1 : 1)
-                });
+        $cardContainer.css('background-color', 'black');
 
-                for(let i = 0;i < 4;i++) {
-                        count++;
-                        dispCard(i);
-                    }
-                });
+      // const cardValue = $('#dealCards').on('click', (e) => {
+        //next line of code retrieves the value of cards present in this game
+        // })
+      applyRandomNumber(cards);
 
-            const dispCard = (cardNum) => {
-                    let i = cardNum
-                    let count = cardNum + 1;
-                    let card = cards[i];
-            $("#cards").append(count + " - " + card.number + "<br/>");
-        }
-
-        $("#draw").click(function() {
-            if(count < 52) {
-                dispCard(count);
-                count++;
-            }
-            return false;
-        })
-
-      $('.cards').append(card);
-      $('#playerOneBoard').append(card);
-      $('#playerTwoBoard').append(card);
+      $cardContainer.append('<body>');
+      $('.cards').append($cardContainer);
+      $($cardContainer).append('#playerOneBoard');
+      $($cardContainer).append('#playerTwoBoard');
 
     }
+}
+//deal number of cards
+
+
+
+
+//apply random number?
+const applyRandomNumber = (cards) => {
+  const randNum = Math.floor(Math.random() * (12-0)) + 0
+    cards[randNum];
+    $('#playerOneBoard').append('<p>' + cards[randNum] + '</p>');
 }
 
 
 
 
+//playerOneBoard div to append cards to
 
+//event targets
 
-
+//shuffle button
+// $("#shuffle").on('click', (e) => {
+//     count = 0
+//     cards = [0,1,2,3,4,5,6,7,8,9,10,10,10];
+//     for(n in numbers) {
+//             let num = numbers[n]
+//             let card = {
+//               number: num,
+//               order: Math.floor(Math.random() * 5200) + 1
+//             };
+//             cards.push(card);
+//         }
+//     })
+//     cards = cards.sort(function(a,b) {
+//             return (a.order < b.order ? -1 : 1)
+//         });
+//
+//         for(let i = 0;i < 9;i++) {
+//                 count++;
+//                 dispCard(i);
+//             }
+//         })
+//
+//     const dispCard = (cardNum) => {
+//             let i = cardNum
+//             let count = cardNum + 1;
+//             let card = cards[i];
+//     $("#cards").append(count + " - " + card.number + "<br/>");
+// }
+//
+// //draw button
+// $("#draw").click(function() {
+//     if(count < 52) {
+//         dispCard(count);
+//         count++;
+//     }
+//     return false;
+//
+//
+//
+//
+//
+//
 //event listeners
 
 $('#startGame').on('click', (e) => {
   console.log('start game button is working');
+})
+
+$('#dealCards').on('click', (e) => {
+  console.log('deal cards button is working');
 })
 
 $('#shuffle').on('click', (e) => {
@@ -83,8 +113,8 @@ $('#draw').on('click', (e) => {
   console.log('draw button is working');
 })
 
-createCards();
-
+createCards(9);
+//
 
 
 });
