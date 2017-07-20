@@ -17,6 +17,62 @@ let count = 0;
 $('<body>').append('#playerOneBoard');
 $('<body>').append('#playerTwoBoard');
 
+// card images
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h01.bmp">').val(1);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h02.bmp">').val(2);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h03.bmp">').val(3);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h04.bmp">').val(4);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h05.bmp">').val(5);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h06.bmp">').val(6);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h07.bmp">').val(7);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h08.bmp">').val(8);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h09.bmp">').val(9);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h10.bmp">').val(10);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h11.bmp">').val(11);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h12.bmp">').val(12);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h13.bmp">').val(0);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c01.bmp">').val(1);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c02.bmp">').val(2);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c03.bmp">').val(3);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c04.bmp">').val(4);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c05.bmp">').val(5);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c06.bmp">').val(6);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c07.bmp">').val(7);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c08.bmp">').val(8);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c09.bmp">').val(9);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c10.bmp">').val(10);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c11.bmp">').val(11);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c12.bmp">').val(12);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/c13.bmp">').val(0);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d01.bmp">').val(1);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d02.bmp">').val(2);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d03.bmp">').val(3);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d04.bmp">').val(4);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d05.bmp">').val(5);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d06.bmp">').val(6);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d07.bmp">').val(7);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d08.bmp">').val(8);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d09.bmp">').val(9);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d10.bmp">').val(10);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d11.bmp">').val(11);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d12.bmp">').val(12);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/d13.bmp">').val(0);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s01.bmp">').val(1);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s02.bmp">').val(2);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s03.bmp">').val(3);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s04.bmp">').val(4);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s05.bmp">').val(5);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s06.bmp">').val(6);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s07.bmp">').val(7);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s08.bmp">').val(8);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s09.bmp">').val(9);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s10.bmp">').val(10);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s11.bmp">').val(11);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s12.bmp">').val(12);
+$('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s13.bmp">').val(0);
+
+
+
 //shuffle button
 $("#shuffle").on('click', (e) => {
     count = 0
@@ -49,7 +105,7 @@ $("#shuffle").on('click', (e) => {
             let count = cardNum + 1;
             let card = cards[i];
     $("#cards").append(count + " - " + card.number + card.suit + "<br/>");
-}
+    }
 
 
 //draw button
