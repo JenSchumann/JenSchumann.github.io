@@ -41,7 +41,7 @@ $('#playerTwoBoard').append($playerTwoCards);
 //not sure how to connect this to the cards array... for now building other parts of the game logic  (so far my idea is to give each picture an id of their shorthand card id ==> 4 of hearts would = h3 and then append them to class cardValueSide which then is appended to cards array??? append or attr.... to be or not to be....)
 const $cardFrontImages = () => {
 
-      const $cardValueSide = $('<div/>').addClass('cardValueSide')
+      const $cardValueSide = $('<div/>').addClass('cardValueSide');
       //when image is assigned to a div via jquery... does the entire file path need to be given?  question to figure out answer to (or will shorter file path work?)
 
 $('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h01.bmp">').val(1);
@@ -101,49 +101,61 @@ $('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Proj
 //all game play logic embedded in one overall function, except for start, stop, restart?
 
 const playGolf = () => {
-
-              const continuePlay = () => {
-                // continues play after checking to see that still w/in scope of round 1-9
-                // if
-              }
+//shuffle code need to be here?
+              const checkIfContinuePlay = () => {
+                  if(round < 10) {
+                    turntoPlay();
+                    }
+                  //can work on else if statement later..
+              };
 
               const turntoPlay = () => {
+                  checkIfContinuePlay();
+                      for(let i = 1; i < 10; i++) {
+                            if(i % 2 !== 0) {
+                                playerOne.turnToPlay();
+                                    //if playerOne clicks on face up card in discard pile && then clicks on cardBack card in their array (on their board)
+                                      // https://jqueryui.com/droppable/
+
+                                      // ^^^^^^ if can figure out drag and drop, set drop element to appear in discard pile
+                                    //replace cardBack card (it hides or pops or detaches) with the clicked on discard pile card that is face up
+
+                                    //else if playerOne clicks on face down drawCardsRemaining pile, it is popped off the top of that array
+
+                                    //and added face up where the playerOne clicks on a cardBack card in their array (on their board)
+
+                            } else if (i % 2 === 0) {
+                                playerTwo.turnToPlay()
 
               }
-              // maybe this should be written with method syntax instead?
-              const firstTurnPlay = () => {
-                // check if not round greater than round 9, if less, continuePlay
-              // for loop that if is an odd numbered round that playerOne goes first, and if it is an even numbered round playerTwo goes first?
-                    for(let i = 1, i <=9, i++) {
-                      if(i % 2 !== 0) {
-                        playerOne.turnToPlay(dealCountOne[]);
-                      } else if (i % 2 === 0) {
-                        playerTwo.turnToPlay()
-                      }
-                      }
-              }
-
-              const playRoundOne = () => {
-                      cards.shuffle();
-                      firstTurnPlay();
-
-
-
-              }
-
-              const continuedRoundPlay = () => {
-                //for rounds 2-9
-              }
-
-
+//               // maybe this should be written with method syntax instead?
+//               const firstTurnPlay = () => {
+//
+//               // for loop that if is an odd numbered round that playerOne goes first, and if it is an even numbered round playerTwo goes first?
+//                     for(let i = 1; i < 10; i++) {
+//                       if(i % 2 !== 0) {
+//                         playerOne.turnToPlay();
+//                       } else if (i % 2 === 0) {
+//                         playerTwo.turnToPlay()
+//                       }
+//                       }
+//               }
+//
+//               const playRoundOne = () => {
+//                       cards.shuffle();
+//                       firstTurnPlay();
+//
+//
+//
+//               }
+//
+//               const continuedRoundPlay = () => {
+//                 //for rounds 2-9
+//               }
 
 
-
-// maybe the shuffle button should be called Begin New Round? or could this be automatic
-
-// assign first turn play the shuffle cards count for dealCountOne .... needs testing!!!!
-
-}
+//
+// }
 
 // need turnToPlay = () => w/logic of one turn
 
@@ -159,7 +171,8 @@ const playGolf = () => {
 
 //does this need to be stored in variable??? global or not....pondering this:
 //shuffle button
-const shuffle = () => {
+//
+// const shuffle = () => {
 $("#shuffle").on('click', (e) => {
     count = 0
     cards = [];
@@ -179,29 +192,37 @@ $("#shuffle").on('click', (e) => {
     cards = cards.sort(function(a,b) {
             return (a.order < b.order ? -1 : 1)
         });
+            for(let i = 0; i < 52; i++) {
+                if(playerOne.turnToPlay()) {
+                    return cards[0,2,4,6,8,10,12,14,16];
+                } else if (playerTwo.turnToPlay()) {
+                    return cards[1,3,5,7,9,11,13,15,17];
+                } else if (drawCard()) {
+                    let drawCardsRemaining = [18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,35,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51];
+                    return drawCardsRemaining[drawCardsRemaining.length - 1];
+                    //not sure if .length -1 will work for both 'drawCard()' && 'chooseTurnCard' (& not pull the same card.. need to figure out how item pulled from array doesn't reappear during the play of the round)
+                } else if (chooseTurnCard()) {
+                    return drawCardsRemaining[drawCardsRemaining.length - 1];
+                }
+            }
+});
+//===========================TRYING IF LOOP BELOW -content++ below (using conditional)
+        // for(let i = 0; i < 9; i++) {
+        //           count++;
+        //           dispCard(i);
+        //         }
+                //should be in lines 178-181 instead of slice attempt if that doesn't work
+//=========================================>>>going to try slice instead of this for loop:
 
-        for(let i = 0;i < 18;i++) {
-            let dealCountOne = {
-                count: cards[0,2,4,6,8,10,12,14,16];
-                // for loop 2x to deal 9 cards to each player or do math (loop 18) /2.  send 1/2 to playerOne & 1/2 to playerTwo?  how do this... or is there another way?
-//perhaps not call dispCard here...
-                dispCard(i);
-                }
-              }
-            let dealCountTwo = {
-              count: cards[1,3,5,7,9,11,13,15,17];
-              dispCard(i);
-                }
-              }
+              
 
 //perhaps dispCard is not included as part of the shuffle().... or have function to hide them until play function sequence is executed...
-    const dispCard = (cardNum) => {
-            let i = cardNum;
-            let count = cardNum + 1;
-            let card = cards[i];
-    $("#cards").append(count + " - " + card.number + card.suit + "<br/>");
-    }
-});
+const dispCard = (cardNum) => {
+        let i = cardNum;
+        let count = cardNum + 1;
+        let card = cards[i];
+$("#cards").append(count + " - " + card.number + card.suit + "<br/>");
+}
 
 //draw button
 $("#draw").click(function() {
@@ -213,34 +234,36 @@ $("#draw").click(function() {
 
 });
 
+
+
 // winning match sets of 3 from cards array which need to be detached from array and also hidden once they appear... once I figure out how to do that...
 // basic code structure... not going for functionality yet:
 
-const matchSetTrioConquest = () => {
-      //need to say if playerOneCards || playerTwoCards.cards[] etc instead of way it is written in this if/else statement?
-        if(cards[0].val() === cards[1].val() === cards[2].val()) {
-          cards[0][1][2].detach().css('opacity', 0);
-          continueTurn();
-          // call a message function that announces to player a congrats for canceling out the value of 3 of their cards?
-            } else if (cards[3].val() === cards[4].val() === cards[5].val()) {
-                cards[3][4][5].detach().css('opacity', 0);
-                continueTurn();
-              } else if (cards[6].val() === cards[7].val() === cards[8].val()) {
-                  cards[6][7][8].detach().css('opacity', 0);
-                  continueTurn();
-                } else if (cards[0].val() === cards[3].val() === cards[6].val()) {
-                    cards[0][3][6].detach().css('opacity', 0);
-                    continueTurn();
-                  } else if (cards[1].val() === cards[4].val() === cards[7].val()) {
-                      cards[1][4][7].detach().css('opacity', 0);
-                      continueTurn();
-                    } else if (cards[2].val() === cards[5].val() === cards[8].val()) {
-                        cards[2][5][8].detach().css('opacity', 0);
-                        continueTurn();
-                      } else {
-                        continueTurn();
-                      }
-};
+// const matchSetTrioConquest = () => {
+//       //need to say if playerOneCards || playerTwoCards.cards[] etc instead of way it is written in this if/else statement?
+//         if(cards[0].val() === cards[1].val() === cards[2].val()) {
+//           cards[0][1][2].detach().css('opacity', 0);
+//           continueTurn();
+//           // call a message function that announces to player a congrats for canceling out the value of 3 of their cards?
+//             } else if (cards[3].val() === cards[4].val() === cards[5].val()) {
+//                 cards[3][4][5].detach().css('opacity', 0);
+//                 continueTurn();
+//               } else if (cards[6].val() === cards[7].val() === cards[8].val()) {
+//                   cards[6][7][8].detach().css('opacity', 0);
+//                   continueTurn();
+//                 } else if (cards[0].val() === cards[3].val() === cards[6].val()) {
+//                     cards[0][3][6].detach().css('opacity', 0);
+//                     continueTurn();
+//                   } else if (cards[1].val() === cards[4].val() === cards[7].val()) {
+//                       cards[1][4][7].detach().css('opacity', 0);
+//                       continueTurn();
+//                     } else if (cards[2].val() === cards[5].val() === cards[8].val()) {
+//                         cards[2][5][8].detach().css('opacity', 0);
+//                         continueTurn();
+//                       } else {
+//                         continueTurn();
+//                       }
+// };
 
 
 
@@ -278,7 +301,9 @@ $('#draw').on('click', (e) => {
 
 
 //
-
+// console.log(cards.dealCountOne);
+// console.log(drawCardsRemaining);
+// dispCard(i);
 
 
 
