@@ -36,19 +36,8 @@ BASE STYLE
 
 body {
   position: relative;
-  line-height: 1.7em;
+  /*line-height: 1.7em;*/
   z-index: 0;
-}
-
-body:after {
-    content:"";
-    position: relative;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    border-left: 3px dotted #FF0000;
-    /*overflow: hidden;*/
 }
 
 header {
@@ -67,49 +56,74 @@ header {
     z-index: 5;
 }
 
-.cardContainer {
-    height: 100%;
-    width: 100%;
-    margin: 0 auto;
-}
-
 #playerOneBoard {
     float: left;
-    height: 100%;
-    width: 45%;
+    height: 375px;
+    width: 375px;
     margin: 0 auto;
-    display: relative;
+    display: flex;
     border: 2px solid green;
     font-size: 50px;
     background-color: gray;
-    flex-direction: column;
+    flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: space-around;
     align-items: center;
     align-content: center;
+    position: relative;
 }
 
 #playerTwoBoard {
     float: right;
-    height: 40%;
-    width: 38%;
+    height: 375px;
+    width: 375px;
     margin: 0 auto;
-    display: block;
+    display: absolute;
     border: 2px solid purple;
     font-size: 50px;
     text-align: center;
-    padding: 15px;
+    /*padding: 15px;*/
     background-color: yellow;
 }
 
-.cards {
-    height: 85px;
-    width: 65px;
+p {
+    height: 96px;
+    width: 96px;
     border: 2px solid white;
+    position: absolute:
+    font-size: 38px;
+    text-align: center;
+    display: inline-block;
     background-color: pink;
     flex: 0 1 auto;
-    align-self: auto;
+    align-self: center;
     padding: 15px;
-    z-index: 3;
-    position: absolute;
+    overflow: hidden;
+    /*z-index: 3;*/
+    /*position: absolute;*/
+}
+
+#cardBack {
+
+}
+
+
+
+
+
+
+
+
+
+
+/*.cards*/
+body:after {
+    content:"";
+    position: relative;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 3px dotted #FF0000;
+    /*overflow: hidden;*/
 }

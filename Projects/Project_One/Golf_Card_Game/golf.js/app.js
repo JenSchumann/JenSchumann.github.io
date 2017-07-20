@@ -9,101 +9,71 @@ $(() => {
 let round = 0;
 let playerOneScore = 0;
 let playerTwoScore = 0;
-let cards = [0,1,2,3,4,5,6,7,8,9,10,10,10,0,1,2,3,4,5,6,7,8,9,10,10,100,1,2,3,4,5,6,7,8,9,10,10,100,1,2,3,4,5,6,7,8,9,10,10,10];
+let suits = ["H","S","C","D"];
+let numbers = ["A","2","3","4","5","6","7","8","9","10","J","Q","K"];
+let cards = [];
 let count = 0;
-const $cardContainer = $('.cardContainer');
 
-//need to generate deck of cards where each has a number value appear
-
-const createCards = (NumberofCards) => {
-    for(let i = 0; i < NumberofCards; i++) {
-//not sure if next line should belong here:
-
-        $cardContainer.css('background-color', 'black');
-
-      // const cardValue = $('#dealCards').on('click', (e) => {
-        //next line of code retrieves the value of cards present in this game
-        // })
-      applyRandomNumberOne(cards);
-      applyRandomNumberTwo(cards);
-
-      $cardContainer.append('<body>');
-      $('.cards').append($cardContainer);
-      $($cardContainer).append('#playerOneBoard');
-      $($cardContainer).append('#playerTwoBoard');
-
-    }
-}
-//deal number of cards
-
-
-
-
-//apply random number
-const applyRandomNumberOne = (cards) => {
-  const randNum = Math.floor(Math.random() * (12-0)) + 0
-    cards[randNum];
-    $('#playerOneBoard').append('<p>' + cards[randNum] + '</p>');
-}
-
-const applyRandomNumberTwo = (cards) => {
-  const randNum = Math.floor(Math.random() * (12-0)) + 0
-    cards[randNum];
-    $('#playerTwoBoard').append('<p>' + cards[randNum] + '</p>');
-}
-
-
-//playerOneBoard div to append cards to
-
-//event targets
+$('<body>').append('#playerOneBoard');
+$('<body>').append('#playerTwoBoard');
 
 //shuffle button
-// $("#shuffle").on('click', (e) => {
-//     count = 0
-//     cards = [0,1,2,3,4,5,6,7,8,9,10,10,10];
-//     for(n in numbers) {
-//             let num = numbers[n]
-//             let card = {
-//               number: num,
-//               order: Math.floor(Math.random() * 5200) + 1
-//             };
-//             cards.push(card);
-//         }
-//     })
-//     cards = cards.sort(function(a,b) {
-//             return (a.order < b.order ? -1 : 1)
-//         });
-//
-//         for(let i = 0;i < 9;i++) {
-//                 count++;
-//                 dispCard(i);
-//             }
-//         })
-//
-//     const dispCard = (cardNum) => {
-//             let i = cardNum
-//             let count = cardNum + 1;
-//             let card = cards[i];
-//     $("#cards").append(count + " - " + card.number + "<br/>");
-// }
-//
-// //draw button
-// $("#draw").click(function() {
-//     if(count < 52) {
-//         dispCard(count);
-//         count++;
-//     }
-//     return false;
-//
-//
-//
-//
-//
-//
+$("#shuffle").on('click', (e) => {
+    count = 0
+    cards = [];
+    $('#cards').attr('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/back.bmp">');
+    for(s in suits) {
+      let suit = suits[s];
+        for(n in numbers) {
+            let num = numbers[n]
+            let card = {
+              suit: suit,
+              number: num,
+              order: Math.floor(Math.random() * 5200) + 1
+            };
+            cards.push(card);
+        }
+    }
+    cards = cards.sort(function(a,b) {
+            return (a.order < b.order ? -1 : 1)
+        });
+
+        for(let i = 0;i < 9;i++) {
+                count++;
+                dispCard(i);
+            }
+        });
+
+    const dispCard = (cardNum) => {
+            let i = cardNum
+            let count = cardNum + 1;
+            let card = cards[i];
+    $("#cards").append(count + " - " + card.number + card.suit + "<br/>");
+}
+
+
+//draw button
+$("#draw").click(function() {
+    if(count < 52) {
+        dispCard(count);
+        count++;
+    }
+    return false;
+
+});
+
+const $cardBack = $('<div/>').on('click', (e) => {
+$cardback.attr('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/back.bmp">');
+$('#cardBack').append($cardBack);
+});
 //event listeners
 
 $('#startGame').on('click', (e) => {
   console.log('start game button is working');
+})
+
+$('#cardBack').on('click', (e) => {
+  console.log('show back of card button working')
 })
 
 $('#dealCards').on('click', (e) => {
@@ -118,8 +88,12 @@ $('#draw').on('click', (e) => {
   console.log('draw button is working');
 })
 
-createCards(9);
+
 //
+
+
+
+
 
 
 });
