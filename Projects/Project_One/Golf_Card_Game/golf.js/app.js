@@ -5,6 +5,7 @@ $(() => {
 // ============================================================================>
 
 // 2 Player Online Card Game Application: Golf
+//code not organized yet into sections!!!
 
 let round = 0;
 let playerOneScore = 0;
@@ -17,7 +18,21 @@ let count = 0;
 $('<body>').append('#playerOneBoard');
 $('<body>').append('#playerTwoBoard');
 
-// card images
+let $cardBack = $('<div/>').on('click', (e) => {
+$cardback.attr('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/back.bmp">');
+$('#cardBack').attr($cardBack);
+$('#playerOneBoard').append('$cardBack');
+$('#playerTwoBoard').append('$cardBack');
+
+
+});
+
+//not sure how to connect this to the cards array... for now building other parts of the game logic  (so far my idea is to give each picture an id of their shorthand card id ==> 4 of hearts would = h3 and then append them to class cardValueSide which then is appended to cards array??? append or attr.... to be or not to be....)
+const $cardFrontImages = () => {
+
+      const $div = $('<div/>').addClass(cardValueSide)
+      //when image is assigned to a div via jquery... does the entire file path need to be given?  question to figure out answer to (or will shorter file path work?)
+
 $('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h01.bmp">').val(1);
 $('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h02.bmp">').val(2);
 $('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/h03.bmp">').val(3);
@@ -70,9 +85,10 @@ $('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Proj
 $('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s11.bmp">').val(11);
 $('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s12.bmp">').val(12);
 $('<div>').html('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/s13.bmp">').val(0);
+};
 
 
-
+//does this need to be stored in variable??? pondering this:
 //shuffle button
 $("#shuffle").on('click', (e) => {
     count = 0
@@ -101,7 +117,7 @@ $("#shuffle").on('click', (e) => {
         });
 
     const dispCard = (cardNum) => {
-            let i = cardNum
+            let i = cardNum;
             let count = cardNum + 1;
             let card = cards[i];
     $("#cards").append(count + " - " + card.number + card.suit + "<br/>");
@@ -118,10 +134,44 @@ $("#draw").click(function() {
 
 });
 
-const $cardBack = $('<div/>').on('click', (e) => {
-$cardback.attr('<img src="/Users/jennifergeeslin/dev/JenSchumann.github.io/Projects/Project_One/Golf_Card_Game/img/back.bmp">');
-$('#cardBack').append($cardBack);
-});
+// winning match sets of 3 from cards array which need to be detached from array and also hidden once they appear... once I figure out how to do that...
+// basic code structure... not going for functionality yet:
+
+const matchSetTrioConquest = () => {
+      //need to say if playerOneCards || playerTwoCards.cards[] etc instead of way it is written in this if/else statement?
+        if(cards[0].val() === cards[1].val() === cards[2].val()) {
+          cards[0][1][2].detach().css('opacity', 0);
+          continueTurn();
+            } else if (cards[3].val() === cards[4].val() === cards[5].val()) {
+                cards[3][4][5].detach().css('opacity', 0);
+                continueTurn();
+              } else if (cards[6].val() === cards[7].val() === cards[8].val()) {
+                  cards[6][7][8].detach().css('opacity', 0);
+                  continueTurn();
+                } else if (cards[0].val() === cards[3].val() === cards[6].val()) {
+                    cards[0][3][6].detach().css('opacity', 0);
+                    continueTurn();
+                  } else if (cards[1].val() === cards[4].val() === cards[7].val()) {
+                      cards[1][4][7].detach().css('opacity', 0);
+                      continueTurn();
+                    } else if (cards[2].val() === cards[5].val() === cards[8].val()) {
+                        cards[2][5][8].detach().css('opacity', 0);
+                        continueTurn();
+                      } else {
+                        continueTurn();
+                      }
+};
+
+
+
+
+
+
+// need to build continueTurn() function
+
+
+
+//=====================================================================================================>>>>
 //event listeners
 
 $('#startGame').on('click', (e) => {
@@ -129,6 +179,7 @@ $('#startGame').on('click', (e) => {
 })
 
 $('#cardBack').on('click', (e) => {
+  //needs to reveal the value of the hidden card 'underneath' the cardBack image & reveal the cardpng attached (by id?) to that random valued card from the array
   console.log('show back of card button working')
 })
 

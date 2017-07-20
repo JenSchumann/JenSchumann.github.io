@@ -117,7 +117,7 @@ p {
 
 
 /*.cards*/
-body:after {
+/*body:after {
     content:"";
     position: relative;
     z-index: -1;
@@ -126,4 +126,4 @@ body:after {
     left: 50%;
     border-left: 3px dotted #FF0000;
     /*overflow: hidden;*/
-}
+/*}*/
