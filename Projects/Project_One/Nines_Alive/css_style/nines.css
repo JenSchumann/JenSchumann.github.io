@@ -1,0 +1,90 @@
+html, body {
+  font-family: 'Open Sans', sans-serif;
+}
+
+body {
+  background-color: black;
+  border: 6px solid red;
+}
+
+.squaresPlayerOne div {
+  width:  5vh;
+  height: 5vh;
+  margin-right: 1%;
+  display: inline-block;
+  background-color: blue;
+  justify-content: center;
+  float: left;
+}
+
+.squaresPlayerOne div {
+  width:  5vh;
+  height: 5vh;
+  margin-right: 1%;
+  display: inline-block;
+  background-color: blue;
+  justify-content: center;
+  float: right;
+}
+
+header {
+  width: 100%;
+  display: block;
+  height: 100px;
+  background-color: green;
+  margin-bottom: 1%;
+  padding-bottom: 1%;
+  padding-left: 1.5%;
+}
+
+button {
+  float: right;
+  margin-right: 50%;
+}
+
+p {
+    height: 96px;
+    width: 96px;
+    border: 2px solid white;
+    position: absolute:
+    font-size: 38px;
+    color: white;
+    font-weight: bolder;
+    text-align: center;
+    display: inline-block;
+    background-color: red;
+    flex: 0 1 auto;
+    align-self: center;
+    padding: 15px;
+    overflow: hidden;
+
+}
+
+#playerOneBoard {
+    float: left;
+    height: 375px;
+    width: 375px;
+    margin: 0 auto;
+    display: flex;
+    border: 2px solid green;
+    font-size: 50px;
+    background-color: gray;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    align-content: center;
+    position: relative;
+}
+
+#playerTwoBoard {
+    float: right;
+    height: 375px;
+    width: 375px;
+    margin: 0 auto;
+    display: absolute;
+    border: 2px solid purple;
+    font-size: 50px;
+    text-align: center;
+    /*padding: 15px;*/
+    background-color: yellow;

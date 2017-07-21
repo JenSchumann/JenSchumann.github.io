@@ -113,21 +113,50 @@ const playGolf = () => {
                   checkIfContinuePlay();
                       for(let i = 1; i < 10; i++) {
                             if(i % 2 !== 0) {
-                                playerOne.turnToPlay();
-                                    //if playerOne clicks on face up card in discard pile && then clicks on cardBack card in their array (on their board)
-                                      // https://jqueryui.com/droppable/
+                                playerOneTurn();
 
-                                      // ^^^^^^ if can figure out drag and drop, set drop element to appear in discard pile
-                                    //replace cardBack card (it hides or pops or detaches) with the clicked on discard pile card that is face up
-
-                                    //else if playerOne clicks on face down drawCardsRemaining pile, it is popped off the top of that array
-
-                                    //and added face up where the playerOne clicks on a cardBack card in their array (on their board)
 
                             } else if (i % 2 === 0) {
-                                playerTwo.turnToPlay()
+                                playerTwoTurn();
+                            }
+                      }
+              };
 
-              }
+              // const playerOneTurn = () => {
+              //     checkIfContinuePlay();
+              //         for(let i = 1; i < 3; i++) {
+              //           if (this.chooseTurnCard())
+              //
+              //           $( function() {
+              //               $( "#draggable" ).draggable();
+              //               $( "#droppable" ).droppable({
+              //                 drop: function( event, ui ) {
+              //                   $( this )
+              //                     .addClass( "ui-state-highlight" )
+              //                     .find( "p" )
+              //                       .html( "Dropped!" );
+              //                 }
+              //               });
+              //             } );
+              //
+              //
+              //
+              //
+              //         }
+              // }
+}
+
+
+
+//if playerOne clicks on face up card in discard pile && then clicks on cardBack card in their array (on their board)
+  // https://jqueryui.com/droppable/
+
+  // ^^^^^^ if can figure out drag and drop, set drop element to appear in discard pile
+//replace cardBack card (it hides or pops or detaches) with the clicked on discard pile card that is face up
+
+//else if playerOne clicks on face down drawCardsRemaining pile, it is popped off the top of that array
+
+//and added face up where the playerOne clicks on a cardBack card in their array (on their board)
 //               // maybe this should be written with method syntax instead?
 //               const firstTurnPlay = () => {
 //
@@ -191,12 +220,16 @@ $("#shuffle").on('click', (e) => {
     }
     cards = cards.sort(function(a,b) {
             return (a.order < b.order ? -1 : 1)
-        });
+
             for(let i = 0; i < 52; i++) {
                 if(playerOne.turnToPlay()) {
                     return cards[0,2,4,6,8,10,12,14,16];
+                    cards.splice(0, )
+                    //append cards to player one board so we can see them
+
                 } else if (playerTwo.turnToPlay()) {
                     return cards[1,3,5,7,9,11,13,15,17];
+                    //append cards to player two board so we can see them
                 } else if (drawCard()) {
                     let drawCardsRemaining = [18,19,20,21,22,23,24,25,26,27,28,29,30,31,32,33,34,35,35,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51];
                     return drawCardsRemaining[drawCardsRemaining.length - 1];
@@ -205,6 +238,7 @@ $("#shuffle").on('click', (e) => {
                     return drawCardsRemaining[drawCardsRemaining.length - 1];
                 }
             }
+    });
 });
 //===========================TRYING IF LOOP BELOW -content++ below (using conditional)
         // for(let i = 0; i < 9; i++) {
@@ -214,7 +248,7 @@ $("#shuffle").on('click', (e) => {
                 //should be in lines 178-181 instead of slice attempt if that doesn't work
 //=========================================>>>going to try slice instead of this for loop:
 
-              
+
 
 //perhaps dispCard is not included as part of the shuffle().... or have function to hide them until play function sequence is executed...
 const dispCard = (cardNum) => {
@@ -279,7 +313,7 @@ $("#draw").click(function() {
 
 $('#startGame').on('click', (e) => {
   console.log('start game button is working');
-  cards.shuffle();
+  playGolf();
 })
 
 $('#cardBack').on('click', (e) => {
@@ -293,6 +327,7 @@ $('#dealCards').on('click', (e) => {
 
 $('#shuffle').on('click', (e) => {
   console.log('shuffle button is working');
+
 })
 
 $('#draw').on('click', (e) => {

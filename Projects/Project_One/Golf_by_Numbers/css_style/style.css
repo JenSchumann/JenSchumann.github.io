@@ -36,8 +36,19 @@ BASE STYLE
 
 body {
   position: relative;
-  /*line-height: 1.7em;*/
+  line-height: 1.7em;
   z-index: 0;
+}
+
+body:after {
+    content:"";
+    position: relative;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    border-left: 3px dotted #FF0000;
+    /*overflow: hidden;*/
 }
 
 header {
@@ -56,34 +67,51 @@ header {
     z-index: 5;
 }
 
+.cardContainer {
+    height: 100%;
+    width: 100%;
+    margin: 0 auto;
+}
+
 #playerOneBoard {
     float: left;
-    height: 375px;
-    width: 375px;
+    height: 100%;
+    width: 45%;
     margin: 0 auto;
-    display: flex;
+    display: relative;
     border: 2px solid green;
     font-size: 50px;
     background-color: gray;
-    flex-direction: row;
+    flex-direction: column;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: center;
     align-items: center;
     align-content: center;
-    position: relative;
 }
 
 #playerTwoBoard {
     float: right;
-    height: 375px;
-    width: 375px;
+    height: 40%;
+    width: 38%;
     margin: 0 auto;
-    display: absolute;
+    display: block;
     border: 2px solid purple;
     font-size: 50px;
     text-align: center;
-    /*padding: 15px;*/
+    padding: 15px;
     background-color: yellow;
+}
+
+.cards {
+    height: 85px;
+    width: 65px;
+    border: 2px solid white;
+    background-color: pink;
+    flex: 0 1 auto;
+    align-self: auto;
+    padding: 15px;
+    z-index: 3;
+    position: absolute;
 }
 
 p {
@@ -92,9 +120,11 @@ p {
     border: 2px solid white;
     position: absolute:
     font-size: 38px;
+    color: white;
+    font-weight: bolder;
     text-align: center;
     display: inline-block;
-    background-color: pink;
+    background-color: red;
     flex: 0 1 auto;
     align-self: center;
     padding: 15px;
@@ -103,28 +133,20 @@ p {
     /*position: absolute;*/
 }
 
-#cardBack {
+/*#turnCard {
+  height: 96px;
+  width: 96px;
+  border: 2px solid white;
+  position: absolute:
+  font-size: 38px;
+  color: white;
+  font-weight: bolder;
+  text-align: center;
+  display: inline-block;
+  background-color: red;
+  flex: 0 1 auto;
+  align-self: center;
+  padding: 15px;
+  overflow: hidden;
 
-}
-
-#draggable { width: 100px; height: 100px; padding: 0.5em; float: left; margin: 10px 10px 10px 0; }
-  #droppable { width: 150px; height: 150px; padding: 0.5em; float: left; margin: 10px; }
-
-
-
-
-
-
-
-
-/*.cards*/
-/*body:after {
-    content:"";
-    position: relative;
-    z-index: -1;
-    top: 0;
-    bottom: 0;
-    left: 50%;
-    border-left: 3px dotted #FF0000;
-    /*overflow: hidden;*/
-/*}*/
+}*/
