@@ -17,7 +17,7 @@ Game Logic:
 
 1. After MVP established: Player 1 & 2 (prompted?) to input their names to be shown above their playing field (see wireframe).
 
-2. When user presses start game (or deal cards) computer deals 9 random squares w/numbers printed on them to to player 1.  They have 30 seconds to click on all the 9s on the screen.  Then player 2 has their turn.
+2. When user presses start game (or deal cards) computer deals random # of squares w/numbers printed on them to to player 1.  They have 30 seconds to click on all the 9s on the screen.  
 
 3.  Rounds 2-9 repeat w/some variation in time & number squares to address.
 
