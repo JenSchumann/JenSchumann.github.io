@@ -10,20 +10,32 @@
     <script src="js_dir/app.js"></script>
     <link rel="stylesheet" href="css_dir/style.css">
     <title>Hi Lo Card Game</title>
-    <style media="screen">
+    <style>
+
+      body{
+        background-color: yellow;
+      }
+      h1{
+        color: red;
+
+      }
       #start{
         margin-top:20px;
       }
       #highLow{
-        dipslay:none;
+        /*display:none;*/
+        display: none;
       }
       .icard{
         padding: 10px;
         border: 1px solid black;
       }
       #cards{
-        margin-top: 20px;
-        height: 60px;
+        height: 100%;
+        width: 100%;
+        margin-top: 30px;
+        height: 90px;
+
       }
     </style>
 
@@ -44,9 +56,23 @@
       <div id="score>"</div>
       <div id="cards"></div>
       <div id="highLow">
-            <button id="btnhigh" type="button"  class="btn">High</button>
+            <button id="btnhigh" type="button"  class="btn">High</button><br>
             <button id="btnlow" type="button"  class="btn">Low</button>
+          </div>
   </body>
+
+  <script>
+  let myDollars = 0;
+  let cardOutput = document.getElementById('cards');
+  let count = 0;
+  let score = 0;
+  let lives = 3;
+  let cards = [];
+  const suits = ['spades', 'hearts', 'clubs', 'diams'];
+  const numbers = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+  const $message = $('#message');
+  let scoreOutput = document.getElementById('score');
+  </script>
 </html>
 
 
