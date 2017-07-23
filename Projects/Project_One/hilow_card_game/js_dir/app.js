@@ -49,10 +49,15 @@ $(() => {
         //need to clear out array each time
         cards = [];
         for(s in suits){
+          const suit = suits[s][0].toUpperCase();
           for(n in numbers){
               const card = {
                suit: suits[s],
-               num: numbers[n]
+               num: numbers[n],
+               //think about where the card lies in the array to assign it value
+               cardValue: parseInt(n) + 2,
+               icon: suit
+
             }
             cards.push(card)
           }
