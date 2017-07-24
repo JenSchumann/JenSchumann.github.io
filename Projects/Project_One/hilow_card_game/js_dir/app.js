@@ -62,7 +62,7 @@ const gameStart = () => {
           // $(cardOutput).html += showCard();
           cardOutput.innerHTML +=showCard();
           // scoreOutput.html = "SCORE: " + score+ " LIVES:("+lives+")";
-          scoreOutput.innerHTML = "SCORE: "+score+"LIVES: ("+lives+")";
+          // scoreOutput.innerHTML = "SCORE: "+score+"LIVES: ("+lives+")";
 
 
 }
