@@ -48,11 +48,14 @@ let hilo = (a) => {
                                     win = true;
                               }
                                       if(win) {
-                                        $("#message").text("You were correct! Your score is now " + score++ + ".  LIVES remaining:  "+lives)
-                                        score++
+                                        score++;
+                                        $("#message").text("You were correct! Your score is now " + score + ".  LIVES remaining:  "+lives)
+
                                         } else {
-                                        $("#message").text("You were wrong! Your score is now " + score-- + ".  LIVES remaining: " +lives--)
-                                        lives--;
+                                          score--;
+                                          lives--;
+                                        $("#message").text("You were wrong! Your score is now " + score + ".  LIVES remaining: " +lives--)
+
                                               if(lives<1) {
                                                 endPlay();
                                               }

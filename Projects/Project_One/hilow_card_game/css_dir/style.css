@@ -33,14 +33,14 @@ h1{
 }
 
 #message {
-  height: 110px;
+  height: 130px;
   width: 100%;
   margin-top: 175px;
   background-color: red;
   font-weight: bolder;
   font-size: 28px;
   margin-right: 0;
-  padding-top: 10px;
+  padding-top: 17px;
   padding-right: 0px;
   text-align: center;
   position: absolute;
@@ -63,7 +63,7 @@ button#btnstart.btn {
   /*align-items: center;
   align-self: center;*/
   display:inline-block;
-  margin-top: 300px;
+  margin-top: 330px;
   padding: 10px 25px;
   text-align: center;
   height: 85px;
