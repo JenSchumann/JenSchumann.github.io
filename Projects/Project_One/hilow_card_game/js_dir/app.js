@@ -1,46 +1,19 @@
 $(() => {
 
     // console.log('time to place your bets');
-    // let myDollars = 100;
-    // let cards = [];
-    // let count = 0;
-    // let score = 0;
-    // let lives = 3;
-    //
-    // const suits = ['spades', 'hearts', 'clubs', 'diams'];
-    // //ace has highest value so it is placed last in the array
-    // const numbers = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
-    // const $message = $('#message');
-    // // $('#message').append(message);
-    //
-    // let scoreOutput = $('#score')
-    // // let scoreOutput = $('#score').append(score);
-    // // const $cards = $('#cards')
-    // let cardOutput = document.getElementById('cards');
-
-
-    //GO BACK AND PUT THIS INTO PROPER JQUERY LANGUAGE!
-
-    //TRY THIS:
-//also try w/#
-    // $('cards').attr(cardOutput);
-
-    ///this line doesn't work
-    // const cardOutput = document.getElementById('#cards');
-
 
 //==========================================================================
-// = () => {
-//
-//         const messageChange
-// const $highLowClick =
-// $('#highLow').css('display,' 'block')
-//
-// .on('click', (e) => {
-//
-//      $(e.currentTarget).css('display', 'block');
-//
-// });
+// variables:
+let myDollars = 0;
+let cardOutput = document.getElementById('cards');
+let count = 0;
+let score = 0;
+let lives = 3;
+let cards = [];
+const suits = ['spades', 'hearts', 'clubs', 'diams'];
+const numbers = ['2','3','4','5','6','7','8','9','10','J','Q','K','A'];
+const $message = $('#message');
+let scoreOutput = document.getElementById('score');
 //==========================================================================
 
 const gameStart = () => {
@@ -54,17 +27,7 @@ const gameStart = () => {
         })
         buildCards();
         shuffleArray(cards);
-          //does cardOutput need to be called in another area?
-          ////GO BACK AND PUT THIS INTO PROPER JQUERY LANGUAGE!
-
-          ///this line doesn't work
-          // cardOutput.html += showCard();
-          // $(cardOutput).html += showCard();
           cardOutput.innerHTML +=showCard();
-          // scoreOutput.html = "SCORE: " + score+ " LIVES:("+lives+")";
-          // scoreOutput.innerHTML = "SCORE: "+score+"LIVES: ("+lives+")";
-
-
 }
 
 
@@ -74,7 +37,6 @@ let hilo = (a) => {
             let win = false;
             let oldCard = cards[count].cardValue;
             count++;
-            ////GO BACK AND PUT THIS INTO PROPER JQUERY LANGUAGE!
             cardOutput.innerHTML += showCard();
 
 //line below is a test and needs to be taken out.
@@ -96,8 +58,6 @@ let hilo = (a) => {
                                               }
                                         scoreOutput.innerHTML = "SCORE: "+score+"LIVES: ("+lives+")";
                                         }
-
-
 }
 
 
@@ -126,8 +86,6 @@ let showCard = () => {
         let c = cards[count];
         let bgColor = (c.icon == "H" || c.icon == "D")?'red':'black';
           return '<span class="icard" style="color:'+bgColor+'">'+cards[count].num+'&'+ cards[count].suit+';</span>';
-
-          // '<span class="icard" style ="color:' + bgColor + ' ">' + c.num +'&'+ c.suit +';</span>';
 }
 
 
