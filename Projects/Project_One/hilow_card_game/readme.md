@@ -1,25 +1,20 @@
-Hi Lo Card Game
+# PROJECT: HI LO CARD GAME
 
-Game Logic
-User is dealt a random card from a card deck.  They have buttons for selecting whether they believe the next random card dealt will have a higher card value than the one presently showing.
+**SUMMARY:** HI LO is an an app that allows the user to select whether they believe the next card dealt will be high or low compared to the one displayed. User starts with three lives, and loses one each time they guess HI or LO incorrectly.  If they guess correctly, they earn a point.  User wins the game when they earn five points.
 
-If they guess correctly, they earn a point.
-
-If they guess incorrectly, they lose a life.
-
-User starts w/three lives.
+# APPROACH
+**TECHNOLOGY USED:** HTML/EJS, CSS, JavaScript/jQuery/
 
 
-Programmatic Logic
+**DESCRIPTION:**
+-Basic JavaScript & jQuery:
+    -Shuffle cards array to randomly deal cards to user.
+    -User interactivity through buttons.
 
-Build shuffle cards array to randomly deal cards to user.
-
-User interactivity through buttons.
-
-Use html language for showing suit symbols.
-
+-Vanilla CSS styling
 
 
-After MVP:
-
-Add functionality for use of betting money from variable stored where the player begins game w/$100.
+# ETC.
+**PLANNED FEATURES:**
+-Add functionality for use of betting money from variable stored where the player begins game w/$100.
+-Improve responsiveness

@@ -58,6 +58,8 @@ let hilo = (a) => {
 
                                               if(lives<1) {
                                                 endPlay();
+                                              } else if (score >= 5) {
+                                                $("#message").text("Congratulations!  You've reached 5 points!  You're a High-Roller now!")
                                               }
                                         scoreOutput.innerHTML = "SCORE: "+score+"LIVES: ("+lives+")";
                                         }
