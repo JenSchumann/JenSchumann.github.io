@@ -1,13 +1,13 @@
 
 body {
   background-color: rgb(210,210,210);
-  width: 100%;
+  /* width: 100%;
   margin: 0 auto;
-  position: relative;
+  position: relative; */
 }
 
 h1{
-  color: red;
+  /* color: red;
   background-color: black;
   height: 115px;
   width: 100%;
@@ -15,54 +15,54 @@ h1{
   position: absolute;
   text-align: center;
   padding-top: 65px;
-  top: 0;
+  top: 0; */
 
 }
 
 .container {
   /*top-padding: 300px;
   top: 300px;*/
-  margin: 0 auto;
+  /* margin: 0 auto;
   width: 100%;
   height: 100%
   position: relative;
-  flex-wrap: wrap;
+  flex-wrap: wrap; */
   /*display: run-in;*/
 
 
 }
 
 #message {
-  height: 130px;
+  /* height: 130px;
   width: 100%;
-  margin-top: 175px;
+  margin-top: 175px; */
   background-color: red;
-  font-weight: bolder;
+  /* font-weight: bolder;
   font-size: 28px;
   margin-right: 0;
   padding-top: 17px;
   padding-right: 0px;
   text-align: center;
-  position: absolute;
+  position: absolute; */
 
 
 }
 #highLow {
-  display: flex;
+  /* display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap; */
+  /* justify-content: center;
   align-items: center;
-  align-content: center;
+  align-content: center; */
 
 
 }
 
 button#btnstart.btn {
-  position: relative;
+  /* position: relative; */
   /*align-items: center;
   align-self: center;*/
-  display:inline-block;
+  /* display:inline-block;
   margin-top: 330px;
   padding: 10px 25px;
   text-align: center;
@@ -73,14 +73,14 @@ button#btnstart.btn {
   border-radius: 10px;
   border: 3px solid rgba(189, 47, 47, 0.57);
   font-size: 24px;
-  font-weight: bolder;
+  font-weight: bolder; */
 }
 
 button#btnlow.btn {
-  position: absolute;
+  /* position: absolute; */
   /*align-items: center;
   align-self: center;*/
-  display: inline-block;
+  /* display: inline-block;
   margin-top: 200px;
   padding: 10px 25px;
   text-align: center;
@@ -92,15 +92,15 @@ button#btnlow.btn {
   justify-content: center;
   border: 3px solid rgba(99, 11, 11, 0.43);
   font-size: 24px;
-  font-weight: bolder;
+  font-weight: bolder; */
 
   }
 
 button#btnhigh.btn {
-  position: absolute;
+  /* position: absolute; */
   /*align-items: center;
   align-self: center;*/
-  display: inline-block;
+  /* display: inline-block;
   margin-top: 200px;
   padding: 10px 25px 12px 25px;
   text-align: center;
@@ -112,45 +112,46 @@ button#btnhigh.btn {
   justify-content: center;
   border: 3px solid rgba(82, 62, 62, 0.6);
   font-size: 24px;
-  font-weight: bolder;
+  font-weight: bolder; */
 
   }
 
 
 #highLow{
-  /*display:none;*/
   display: none;
 }
 
 span.icard{
   height: 125px;
   width: 100px;
-  padding: 1.75em .75em;
-  /*padding-bottom: 2em;*/
-  margin-top: 0px;
+  padding: 1.75em .60em;
+  padding-bottom: 2.85em;
+  /* margin-top: 0px;
   margin-left: 30px;
-  margin-right: 30px;
+  margin-right: 30px; */
   border: 5px solid rgba(95, 20, 20, 0.45);
 
+  margin: 0 auto;
   text-align: center;
-  justify-content: space-around;
+  /* justify-content: space-around; */
   font-size: 35px;
   background-color: white;
-  flex-flow: row;
+  /* flex-flow: row; */
   border-radius: .25em;
   z-index: 2;
   border-style: outset;
+  /* position: absolute; */
+  display: inline-block;
   /*align-content: center;*/
-
-
 }
 
 #cards{
   /*margin-top: 310px;*/
   height: 600x;
-  width: 600px;
-  padding-top: 450px;
-  top: 400px;
+  /* width: 600px; */
+  /* padding-top: 50px; */
+  /* top: 40px; */
   flex-wrap: wrap;
+  padding-left: 6%;
 
 }
